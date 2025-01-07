@@ -1,0 +1,16 @@
+bin/*
+!bin/.gitkeep
+
+config/*
+!config/.gitkeep
+
+lib/*
+!lib/.gitkeep
+
+share/*
+!share/nvim/
+share/nvim/*
+!share/nvim/sysinit.vim
+
+state
+!state/.gitkeep
