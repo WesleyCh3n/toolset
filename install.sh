@@ -54,8 +54,8 @@ main() {
 
   # employ nvim config
   git clone https://github.com/WesleyCh3n/dotfiles.git
-  cp -r dotfiles/.config/nvim/ ./config/
-  rm -r dotfiles
+  cp -r dotfiles/dotfiles/.config/nvim/ ./config/
+  rm -rf dotfiles
 }
 
 main
