@@ -28,6 +28,8 @@ install_tool() {
 }
 
 main() {
+  source ./bashrc
+
   # install nvm & node
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
   source ./bashrc
@@ -45,8 +47,15 @@ main() {
     "https://github.com/jesseduffield/lazygit/releases/download/v{{VERSION}}/lazygit_{{VERSION}}_Linux_x86_64.tar.gz" \
     "lazygit"
 
+  # install neovim
   curl -# -LO "https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz"
   tar xf nvim-linux64.tar.gz --strip-components=1
+  rm nvim-linux64.tar.gz
+
+  # employ nvim config
+  git clone https://github.com/WesleyCh3n/dotfiles.git
+  cp -r dotfiles/.config/nvim/ ./config/
+  rm -r dotfiles
 }
 
 main
